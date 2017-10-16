@@ -13,7 +13,8 @@ This image was created to be a small layer on top of jenkins:alpine such that it
 
 # Supported tags and respective `Dockerfile` links
 
-* `latest` [(jareddlc/jenkins-with-docker-socket/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/Dockerfile)
+* `latest`, `alpine` [(jareddlc/jenkins-with-docker-socket/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/Dockerfile)
+* `lts-alpine` [((jareddlc/jenkins-with-docker-socket/lts-alpine/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/lts-alpine/Dockerfile)
 * `2.60.3-alpine` [(jareddlc/jenkins-with-docker-socket/2.60.3-alpine/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/2.60.3-alpine/Dockerfile)
 
 # How to use this image
