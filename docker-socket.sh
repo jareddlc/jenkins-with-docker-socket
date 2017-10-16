@@ -10,7 +10,7 @@ function getGroup () {
 echo "***** docker-socket *****"
 echo "Current user: $(whoami)"
 echo "/var/run/docker.sock is currently in group:" $(getGroup)
-echo "Chaning group of docker.sock to: $GROUP_DOCKER"
+echo "Changing group of docker.sock to: $GROUP_DOCKER"
 
 sudo chown :$GROUP_DOCKER /var/run/docker.sock
 
