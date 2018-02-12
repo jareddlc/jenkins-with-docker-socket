@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.106-alpine
+FROM jenkins/jenkins:alpine
 
 MAINTAINER Jared De La Cruz <jared@jareddlc.com>
 
