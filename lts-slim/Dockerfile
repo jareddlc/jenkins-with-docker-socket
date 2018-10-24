@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts-alpine
+FROM jenkins/jenkins:lts-slim
 
 MAINTAINER Jared De La Cruz <jared@jareddlc.com>
 
@@ -11,7 +11,7 @@ ARG GROUP_DOCKER_GID=1001
 USER ${USER_ROOT}
 
 # Create docker group and add user jenkins to the group
-RUN addgroup -g ${GROUP_DOCKER_GID} ${GROUP_DOCKER} \
+RUN addgroup -gid ${GROUP_DOCKER_GID} ${GROUP_DOCKER} \
 	&& addgroup ${USER_JENKINS} ${GROUP_DOCKER}
 
 # Install docker
@@ -24,8 +24,8 @@ ENV DOCKER_ARCH x86_64
 ENV DOCKER_SHA256 83be159cf0657df9e1a1a4a127d181725a982714a983b2bdcc0621244df93687
 
 RUN set -ex; \
-	apk add --no-cache sudo; \
-	apk add --no-cache --virtual .fetch-deps \
+	apt-get update; \
+	apt-get install -y \
 		curl \
 		tar \
 	&& curl -fSL -o docker.tgz "https://${DOCKER_BUCKET}/linux/static/${DOCKER_CHANNEL}/${DOCKER_ARCH}/docker-${DOCKER_VERSION}.tgz" \
@@ -33,7 +33,6 @@ RUN set -ex; \
 	&& echo "${DOCKER_SHA256} *docker.tgz" | sha256sum -c - \
 	&& tar --extract --file docker.tgz --strip-components 1 --directory /usr/local/bin/ \
 	&& rm docker.tgz \
-	&& apk del .fetch-deps \
 	&& dockerd -v \
 	&& docker -v
 

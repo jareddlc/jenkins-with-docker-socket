@@ -13,13 +13,16 @@ This image was created to be a small layer on top of jenkins:alpine such that it
 
 # Supported tags and respective `Dockerfile` links
 
-* `latest`, `alpine` [(jareddlc/jenkins-with-docker-socket/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/Dockerfile)
+* `alpine` [(jareddlc/jenkins-with-docker-socket/alpine/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/alpine/Dockerfile)
+* `latest` [(jareddlc/jenkins-with-docker-socket/latest/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/latest/Dockerfile)
+* `lts` [(jareddlc/jenkins-with-docker-socket/lts/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/lts/Dockerfile)
 * `lts-alpine` [((jareddlc/jenkins-with-docker-socket/lts-alpine/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/lts-alpine/Dockerfile)
-* `2.60.3-alpine` [(jareddlc/jenkins-with-docker-socket/2.60.3-alpine/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/2.60.3-alpine/Dockerfile)
+* `lts-slim` [(jareddlc/jenkins-with-docker-socket/lts-slim/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/lts-slim/Dockerfile)
+* `slim` [(jareddlc/jenkins-with-docker-socket/slim/Dockerfile)](https://github.com/jareddlc/jenkins-with-docker-socket/blob/master/slim/Dockerfile)
 
 # How to use this image
 
-`$ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jareddlc/jenkins-with-docker-socket`
+`$ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -p 50000:50000 jareddlc/jenkins-with-docker-socket:lts-alpine`
 
 
 For more information and options see official jenkins repo: https://hub.docker.com/_/jenkins/
