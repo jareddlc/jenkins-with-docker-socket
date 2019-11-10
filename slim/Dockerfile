@@ -15,13 +15,13 @@ RUN addgroup -gid ${GROUP_DOCKER_GID} ${GROUP_DOCKER} \
 	&& addgroup ${USER_JENKINS} ${GROUP_DOCKER}
 
 # Install docker
-# From https://github.com/docker-library/docker/blob/9820a073c73cded1d189bc8f7b067b1b4c6f9fb2/18.06/Dockerfile
+# From https://github.com/docker-library/docker/blob/4dd3f3fe1f263ea74cdc8bed6091008cf62ab751/19.03/Dockerfile
 
 ENV DOCKER_CHANNEL stable
 ENV DOCKER_BUCKET download.docker.com
-ENV DOCKER_VERSION 18.06.1-ce
+ENV DOCKER_VERSION 19.03.4
 ENV DOCKER_ARCH x86_64
-ENV DOCKER_SHA256 83be159cf0657df9e1a1a4a127d181725a982714a983b2bdcc0621244df93687
+ENV DOCKER_SHA256 efef2ad32d262674501e712351be0df9dd31d6034b175d0020c8f5d5c9c3fd10
 
 RUN set -ex; \
 	apt-get update; \
